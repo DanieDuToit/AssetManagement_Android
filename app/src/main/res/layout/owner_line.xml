@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+    <!-- ItemDescription -->
+
+        <TextView
+            style="@style/input_field"
+            android:id="@+id/tvUserName"
+            android:paddingBottom="2dip"
+            android:text="Username:"
+            android:layout_width="100dp"
+            android:lines="1"/>
+
+        <!-- ItemDescription -->
+
+        <TextView
+            style="@style/input_field"
+            android:id="@+id/tvFirstName"
+            android:paddingBottom="2dip"
+            android:text="First Name"
+            android:layout_width="150dp"
+            android:layout_marginStart="10dp"
+            android:lines="1"/>
+
+        <!-- AccCode -->
+
+        <TextView
+            style="@style/input_field"
+            android:id="@+id/tvSurname"
+            android:layout_width="150dp"
+            android:paddingBottom="2dip"
+            android:text="Surname"
+            android:layout_marginStart="10dp"
+            android:lines="1"/>
+
+        <!-- LineQuantity -->
+
+        <TextView
+            style="@style/input_field"
+            android:id="@+id/tvAssetName"
+            android:text="Asset Name"
+            android:layout_width="200dp"
+            android:layout_marginStart="10dp"
+            android:lines="1"
+            />
+
+        <!-- LineQuantity -->
+
+        <TextView
+            style="@style/input_field"
+            android:id="@+id/tvSerialNumber"
+            android:text="Serial Number"
+            android:layout_width="200dp"
+            android:layout_marginStart="10dp"
+            android:lines="1"
+            />
+
+</LinearLayout>

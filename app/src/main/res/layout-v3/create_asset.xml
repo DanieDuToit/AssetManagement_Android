@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="100">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:adjustViewBounds="false"
+        android:src="@mipmap/logo"/>
+
+    <TextView
+        style="@style/H2"
+        android:layout_gravity="center_horizontal"
+        android:text="Assign Asset"
+        android:textSize="20sp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        >
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username:"
+                    android:id="@+id/tvUserName"
+                    android:layout_marginLeft="10dp"
+                    style="@style/H2"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etUserName"
+                    android:layout_toRightOf="@+id/tvUserName"
+                    android:layout_marginLeft="40dp"
+                    android:layout_alignBaseline="@+id/tvUserName"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact Number:"
+                    android:id="@+id/tvContactNumber"
+                    android:layout_toRightOf="@+id/etUserName"
+                    android:layout_alignBottom="@+id/tvUserName"
+                    android:layout_marginLeft="70dp"
+                    style="@style/H2"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etContactNumber"
+                    android:layout_toRightOf="@+id/tvContactNumber"
+                    android:layout_alignBaseline="@+id/tvContactNumber"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Asset Name:"
+                    android:id="@+id/tvAssetName"
+                    android:layout_marginTop="30dp"
+                    style="@style/H2"
+                    android:layout_below="@+id/tvUserName"
+                    android:layout_alignLeft="@+id/tvUserName"/>
+
+                <Spinner
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/assetNameSpinner"
+                    android:spinnerMode="dialog"
+                    style="@style/input_field"
+                    android:layout_alignBaseline="@+id/tvAssetName"
+                    android:layout_alignLeft="@+id/etUserName"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Serial Number:"
+                    android:id="@+id/tvSerialNumber"
+                    android:layout_marginLeft="10dp"
+                    style="@style/H2"
+                    android:layout_alignTop="@+id/tvAssetName"
+                    android:layout_alignLeft="@+id/tvContactNumber"/>
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etSerialNumber"
+                    style="@style/input_field"
+                    android:layout_alignBaseline="@+id/tvSerialNumber"
+                    android:layout_alignLeft="@+id/etContactNumber"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CPU:"
+                    android:id="@+id/tvCPU"
+                    android:layout_alignLeft="@+id/tvAssetName"
+                    android:layout_marginTop="10dp"
+                    style="@style/H2"
+                    android:layout_below="@+id/assetNameSpinner"/>
+
+                <EditText
+                    style="@style/input_field"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etCPU"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignLeft="@+id/assetNameSpinner"
+                    android:layout_alignBaseline="@+id/tvCPU"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RAM:"
+                    android:id="@+id/tvRAM"
+                    android:layout_alignBottom="@+id/tvCPU"
+                    android:layout_alignLeft="@+id/tvSerialNumber"
+                    style="@style/H2"/>
+
+                <EditText
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etRAM"
+                    android:layout_alignLeft="@+id/etSerialNumber"
+                    style="@style/input_field"
+                    android:layout_alignBaseline="@+id/tvRAM"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Operating System:"
+                    android:id="@+id/tvOperatingSystem"
+                    android:layout_alignLeft="@+id/tvCPU"
+                    android:layout_below="@+id/tvCPU"
+                    android:layout_marginTop="30dp"
+                    style="@style/H2"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etOpeartingSystem"
+                    android:layout_toRightOf="@+id/tvOperatingSystem"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignBaseline="@+id/tvOperatingSystem"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comments:"
+                    android:id="@+id/tvComments"
+                    android:layout_alignLeft="@+id/tvOperatingSystem"
+                    android:layout_below="@+id/tvOperatingSystem"
+                    android:layout_marginTop="30dp"
+                    style="@style/H2"/>
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText2"
+                    android:layout_alignLeft="@+id/etOpeartingSystem"
+                    android:layout_alignEnd="@+id/etSerialNumber"
+                    android:minLines="3"
+                    android:layout_alignTop="@+id/tvComments"
+                    android:gravity="top"
+                    android:layout_alignBaseline="@+id/tvComments"/>
+
+            </RelativeLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AssetManagement</string>
+    <string name="loginPrompt">Please login to continue.</string>
+    <string name="userName">Username:</string>
+    <string name="password">Password:</string>
+    <string name="companyName">Company Name:</string>
+    <string name="login">Login</string>
+    <string name="selectAsset">Please select an asset from the list</string>
+    <string name="action_settings">Main Menu</string>
+    <string name="DisplayIVKey">Your Identification Key</string>
+    <string name="companyDomain">Domain Name</string>
+</resources>

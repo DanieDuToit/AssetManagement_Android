@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="100">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:adjustViewBounds="false"
+        android:src="@mipmap/logo"/>
+
+    <TextView
+        style="@style/H2"
+        android:layout_gravity="center_horizontal"
+        android:text="Asset Owner"
+        android:textSize="20sp"/>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username:"/>
+
+                <Spinner
+                    android:id="@+id/userNameSpinner"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"/>
+
+                <TextView
+                    style="@style/H2"
+                    android:text="Serial Number:"/>
+
+                <EditText
+                    android:id="@+id/etSerialNumber"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"/>
+
+                <Button
+                    android:id="@+id/btnFilter"
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_below="@+id/companyRow"
+                    android:layout_centerHorizontal="true"
+                    android:layout_column="4"
+                    android:background="@drawable/buttonshape"
+                    android:gravity="center"
+                    android:text="    Filter    "/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#c0c0c0"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <Button
+                    android:id="@+id/btnCreate"
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_below="@+id/companyRow"
+                    android:layout_centerHorizontal="true"
+                    android:layout_column="0"
+                    android:background="@drawable/buttonshape"
+                    android:gravity="center"
+                    android:text="    Create    "
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_below="@+id/companyRow"
+                    android:layout_centerHorizontal="true"
+                    android:layout_column="1"
+                    android:background="@drawable/buttonshape"
+                    android:gravity="center"
+                    android:text="    Update    "
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="Username:"
+                        android:id="@+id/tvUserName"
+                        style="@style/H2"
+                        android:layout_width="100dp"/>
+
+                    <TextView
+                        android:text="First Name"
+                        android:id="@+id/tvFirstName"
+                        android:layout_marginStart="10dp"
+                        style="@style/H2"
+                        android:layout_width="150dp"
+                        />
+
+                    <TextView
+                        android:text="Surname"
+                        android:id="@+id/tvSurName"
+                        android:layout_marginStart="10dp"
+                        style="@style/H2"
+                        android:layout_width="150dp"/>
+
+                    <TextView
+                        android:text="Asset Name"
+                        android:id="@+id/tvAssetName"
+                        android:layout_marginStart="10dp"
+                        style="@style/H2"
+                        android:layout_width="200dp"/>
+
+                    <TextView
+                        android:text="Serial Number"
+                        android:id="@+id/tvSerialNumber"
+                        android:layout_marginStart="10dp"
+                        style="@style/H2"
+                        android:layout_width="200dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#c0c0c0"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/listView"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>
