@@ -163,7 +163,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Comments:"
+                    android:text="Comment:"
                     android:id="@+id/tvComments"
                     android:layout_alignLeft="@+id/tvOperatingSystem"
                     android:layout_below="@+id/tvOperatingSystem"
@@ -173,7 +173,7 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText2"
+                    android:id="@+id/etComment"
                     android:layout_alignLeft="@+id/etOpeartingSystem"
                     android:layout_alignEnd="@+id/etSerialNumber"
                     android:minLines="3"
