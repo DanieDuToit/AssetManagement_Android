@@ -2,6 +2,7 @@ package za.co.proteacoin.assetmanagement.app;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,24 +22,16 @@ import java.util.List;
  * Created by dutoitd1 on 2015/06/04.
  */
 public class SelectOwner extends Activity  implements View.OnClickListener{
-	GlobalState gs;
-	Spinner mCompaniesSpinner;
-	Spinner mTypesSpinner;
-	String selectedCompany;
-	String selectedType;
+	AutoCompleteTextView actv_UserNames;
 	String url = "";
 	// Requisition's JSONArray
 	JSONArray data = null;
 	private ProgressDialog pDialog;
+	private GlobalState gs;
+	private Button btnCreateAsset;
+	private Button btnUpdateAsset;
 
-	Integer selectedAssetTypeID;
 	ArrayList<String> assetTypeList;
-	String[] mAssetTypes;
-	String[] mCompanies = {
-			"Magnum",
-			"Protea Coin",
-			"Coin Security"
-	};
 	HashMap<Integer, Integer> assetTypeIDs;
 	ArrayAdapter<String> typeAdapter;
 
@@ -47,16 +40,36 @@ public class SelectOwner extends Activity  implements View.OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.select_owner);
 
+		gs = (GlobalState) getApplication();
+
+		btnCreateAsset = (Button) findViewById(R.id.btnCreate);
+		btnUpdateAsset = (Button) findViewById(R.id.btnUpdate);
 
 		assetTypeIDs = new HashMap<Integer, Integer>();
 		assetTypeList = new ArrayList<String>();
 
-		gs = (GlobalState) getApplication();
 		if (getActionBar() != null) {
-			getActionBar().setTitle("Asset Capture");
+			getActionBar().setTitle("Asset Owner");
 		}
 		url = GlobalState.INTERNET_URL;
 
+		btnCreateAsset.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(), CreateAsset.class);
+				startActivityForResult(i, 1);
+
+			}
+		});
+
+		btnUpdateAsset.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(), UpdateAsset.class);
+				startActivityForResult(i, 1);
+
+			}
+		});
 	}
 
 
@@ -117,7 +130,6 @@ public class SelectOwner extends Activity  implements View.OnClickListener{
 			if (pDialog.isShowing()) {
 				pDialog.dismiss();
 			}
-			mTypesSpinner.setAdapter(typeAdapter);
 		}
 	}
 

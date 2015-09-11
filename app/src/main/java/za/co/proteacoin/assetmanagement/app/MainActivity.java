@@ -52,6 +52,7 @@ import javax.crypto.spec.IvParameterSpec;
 public class MainActivity extends Activity {
     private final String TAG = "MAIN";
     private Handler mHandler = new Handler();
+    private LinearLayout trCompanyRow;
     private boolean loginSuccessFull = false;
     private SharedPreferences sharedPref;
     private int numberrOfSecurityIDViews = -1;
@@ -70,11 +71,10 @@ public class MainActivity extends Activity {
     private Cipher cipher;
     private String url = "";
     private Hashtable companiesTable;
-    private LinearLayout llCompany;
     /**
      * Called when the activity is first created.
      */
-    private String encryptedOutput;
+    private LinearLayout llCompany;
     private ProgressDialog pDialog;
     private boolean hasError = false;
     // for JSON

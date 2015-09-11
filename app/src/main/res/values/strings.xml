@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AssetManagement</string>
+    <string name="app_name">Asset Management</string>
     <string name="loginPrompt">Please login to continue.</string>
     <string name="userName">Username:</string>
     <string name="password">Password:</string>

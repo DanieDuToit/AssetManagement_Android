@@ -29,8 +29,25 @@
         <activity
             android:name=".CompanyInit_Activity"
             android:launchMode="singleTop"
-            android:label="@string/app_name">
-            <!--android:screenOrientation="portrait"-->
+            android:label="Init Device">
+            <intent-filter>
+                <action android:name="android.intent.action.CompanyInit_Activity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CreateAsset"
+            android:launchMode="singleTop"
+            android:label="Create Asset">
+            <intent-filter>
+                <action android:name="android.intent.action.CompanyInit_Activity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UpdateAsset"
+            android:launchMode="singleTop"
+            android:label="Update Asset">
             <intent-filter>
                 <action android:name="android.intent.action.CompanyInit_Activity"/>
                 <category android:name="android.intent.category.DEFAULT"/>

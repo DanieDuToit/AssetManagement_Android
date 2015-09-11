@@ -8,9 +8,11 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="false"
-        android:src="@mipmap/logo"/>
+        android:cropToPadding="false"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo"/>
 
     <TextView
         style="@style/H2"
@@ -20,10 +22,10 @@
         />
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView"
-        >
+        android:layout_weight="101.30">
 
         <HorizontalScrollView
             android:layout_width="wrap_content"
@@ -39,16 +41,16 @@
                     android:layout_height="wrap_content"
                     android:text="Username:"
                     android:id="@+id/tvUserName"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     style="@style/H2"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="15dp"/>
 
-                <EditText
+                <AutoCompleteTextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/etUserName"
-                    android:layout_toRightOf="@+id/tvUserName"
-                    android:layout_marginLeft="40dp"
+                    android:id="@+id/act_UserName"
+                    android:layout_toEndOf="@+id/tvUserName"
+                    android:layout_marginStart="20dp"
                     android:layout_alignBaseline="@+id/tvUserName"/>
 
                 <TextView
@@ -56,18 +58,20 @@
                     android:layout_height="wrap_content"
                     android:text="Contact Number:"
                     android:id="@+id/tvContactNumber"
-                    android:layout_toRightOf="@+id/etUserName"
+                    android:layout_toEndOf="@+id/act_UserName"
                     android:layout_alignBottom="@+id/tvUserName"
-                    android:layout_marginLeft="70dp"
-                    style="@style/H2"/>
+                    android:layout_marginEnd="20dp"
+                    style="@style/H2"
+                    android:layout_marginStart="10dp"/>
 
                 <EditText
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/etContactNumber"
-                    android:layout_toRightOf="@+id/tvContactNumber"
+                    android:layout_toEndOf="@+id/tvContactNumber"
                     android:layout_alignBaseline="@+id/tvContactNumber"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_alignParentStart="false"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -77,26 +81,27 @@
                     android:layout_marginTop="30dp"
                     style="@style/H2"
                     android:layout_below="@+id/tvUserName"
-                    android:layout_alignLeft="@+id/tvUserName"/>
+                    android:layout_alignStart="@+id/tvUserName"/>
 
-                <Spinner
-                    android:layout_width="200dp"
+                <MultiAutoCompleteTextView
+                    android:completionThreshold="3"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/assetNameSpinner"
-                    android:spinnerMode="dialog"
+                    android:id="@+id/mact_AssetName"
                     style="@style/input_field"
                     android:layout_alignBaseline="@+id/tvAssetName"
-                    android:layout_alignLeft="@+id/etUserName"/>
+                    android:layout_alignStart="@+id/act_UserName"
+                    android:layout_toStartOf="@+id/tvSerialNumber"
+                    android:layout_marginEnd="5dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Serial Number:"
                     android:id="@+id/tvSerialNumber"
-                    android:layout_marginLeft="10dp"
                     style="@style/H2"
                     android:layout_alignTop="@+id/tvAssetName"
-                    android:layout_alignLeft="@+id/tvContactNumber"/>
+                    android:layout_alignStart="@+id/tvContactNumber"/>
 
                 <EditText
                     android:layout_width="200dp"
@@ -104,17 +109,17 @@
                     android:id="@+id/etSerialNumber"
                     style="@style/input_field"
                     android:layout_alignBaseline="@+id/tvSerialNumber"
-                    android:layout_alignLeft="@+id/etContactNumber"/>
+                    android:layout_alignStart="@+id/etContactNumber"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CPU:"
                     android:id="@+id/tvCPU"
-                    android:layout_alignLeft="@+id/tvAssetName"
-                    android:layout_marginTop="10dp"
+                    android:layout_alignStart="@+id/tvAssetName"
+                    android:layout_marginTop="30dp"
                     style="@style/H2"
-                    android:layout_below="@+id/assetNameSpinner"/>
+                    android:layout_below="@+id/tvAssetName"/>
 
                 <EditText
                     style="@style/input_field"
@@ -122,8 +127,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/etCPU"
                     android:layout_marginTop="10dp"
-                    android:layout_alignLeft="@+id/assetNameSpinner"
-                    android:layout_alignBaseline="@+id/tvCPU"/>
+                    android:layout_alignStart="@+id/mact_AssetName"
+                    android:layout_alignBaseline="@+id/tvCPU"
+                    android:layout_alignEnd="@+id/mact_AssetName"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -131,14 +137,14 @@
                     android:text="RAM:"
                     android:id="@+id/tvRAM"
                     android:layout_alignBottom="@+id/tvCPU"
-                    android:layout_alignLeft="@+id/tvSerialNumber"
+                    android:layout_alignStart="@+id/tvSerialNumber"
                     style="@style/H2"/>
 
                 <EditText
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/etRAM"
-                    android:layout_alignLeft="@+id/etSerialNumber"
+                    android:layout_alignStart="@+id/etSerialNumber"
                     style="@style/input_field"
                     android:layout_alignBaseline="@+id/tvRAM"/>
 
@@ -147,7 +153,7 @@
                     android:layout_height="wrap_content"
                     android:text="Operating System:"
                     android:id="@+id/tvOperatingSystem"
-                    android:layout_alignLeft="@+id/tvCPU"
+                    android:layout_alignStart="@+id/tvCPU"
                     android:layout_below="@+id/tvCPU"
                     android:layout_marginTop="30dp"
                     style="@style/H2"/>
@@ -156,8 +162,8 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/etOpeartingSystem"
-                    android:layout_toRightOf="@+id/tvOperatingSystem"
-                    android:layout_marginLeft="10dp"
+                    android:layout_toEndOf="@+id/tvOperatingSystem"
+                    android:layout_marginStart="10dp"
                     android:layout_alignBaseline="@+id/tvOperatingSystem"/>
 
                 <TextView
@@ -165,7 +171,7 @@
                     android:layout_height="wrap_content"
                     android:text="Comment:"
                     android:id="@+id/tvComments"
-                    android:layout_alignLeft="@+id/tvOperatingSystem"
+                    android:layout_alignStart="@+id/tvOperatingSystem"
                     android:layout_below="@+id/tvOperatingSystem"
                     android:layout_marginTop="30dp"
                     style="@style/H2"/>
@@ -173,8 +179,8 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText2"
-                    android:layout_alignLeft="@+id/etOpeartingSystem"
+                    android:id="@+id/etComment"
+                    android:layout_alignStart="@+id/etOpeartingSystem"
                     android:layout_alignEnd="@+id/etSerialNumber"
                     android:minLines="3"
                     android:layout_alignTop="@+id/tvComments"
@@ -184,5 +190,32 @@
             </RelativeLayout>
         </HorizontalScrollView>
     </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSendMail"
+            style="@android:style/Widget.ActionButton.Overflow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Send e-mail to helpdesk"
+            android:layout_below="@+id/loginButton"
+            android:layout_gravity="bottom"/>
+
+        <Button
+            android:id="@+id/btnCallHelpdesk"
+            style="@android:style/Widget.ActionButton.Overflow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Call helpdesk"
+            android:layout_toEndOf="@+id/btnSendMail"
+            android:layout_alignBaseline="@+id/btnSendMail"
+            android:layout_gravity="bottom"/>
+    </LinearLayout>
 
 </LinearLayout>

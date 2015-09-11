@@ -15,6 +15,5 @@
         android:icon="@android:drawable/ic_dialog_info"
         android:orderInCategory="10"
         android:title="@string/DisplayIVKey"
-        app:showAsAction="never"
         />
 </menu>

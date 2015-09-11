@@ -8,9 +8,11 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="false"
-        android:src="@mipmap/logo"/>
+        android:cropToPadding="false"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo"/>
 
     <TextView
         style="@style/H2"
@@ -39,9 +41,11 @@
                     style="@style/H2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Username:"/>
+                    android:text="Username:"
+                    android:layout_marginLeft="10dp"/>
 
-                <Spinner
+                <AutoCompleteTextView
+                    android:completionThreshold="3"
                     android:id="@+id/userNameSpinner"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
@@ -128,7 +132,8 @@
                         android:text="Username:"
                         android:id="@+id/tvUserName"
                         style="@style/H2"
-                        android:layout_width="100dp"/>
+                        android:layout_width="100dp"
+                        android:layout_marginLeft="10dp"/>
 
                     <TextView
                         android:text="First Name"
@@ -173,7 +178,8 @@
                 <ListView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/listView"/>
+                    android:id="@+id/listView"
+                    android:layout_marginLeft="10dp"/>
 
             </LinearLayout>
         </LinearLayout>

@@ -6,17 +6,18 @@
               android:weightSum="1">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
         android:id="@+id/imageView"
-        android:src="@mipmap/logo"
-        android:adjustViewBounds="false"/>
-
-    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/horizontalScrollView"
-        android:layout_weight="0.83">
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/logo"/>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView">
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -42,7 +43,7 @@
                         android:textSize="21sp"
                         android:layout_alignParentStart="false"
                         android:layout_alignParentEnd="false"
-                        />
+                        android:layout_marginTop="15dp"/>
 
                     <TextView
                         style="@style/H2"
@@ -54,7 +55,7 @@
                         android:layout_alignLeft="@+id/tvLoginPrompt"
                         android:layout_below="@+id/tvLoginPrompt"
                         android:layout_width="130dp"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="15dp"/>
 
                     <EditText
                         android:id="@+id/domainName"
@@ -179,35 +180,35 @@
                     android:layout_below="@+id/loginButton"
                     android:layout_alignLeft="@+id/tvLoginPrompt"/>
 
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btnSendMail"
+                        style="@android:style/Widget.ActionButton.Overflow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:text="Send e-mail to helpdesk"
+                        android:layout_below="@+id/loginButton"
+                        android:layout_gravity="bottom"/>
+
+                    <Button
+                        android:id="@+id/btnCallHelpdesk"
+                        style="@android:style/Widget.ActionButton.Overflow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:text="Call helpdesk"
+                        android:layout_toRightOf="@+id/btnSendMail"
+                        android:layout_alignBaseline="@+id/btnSendMail"
+                        android:layout_gravity="bottom"/>
+                </LinearLayout>
+
             </LinearLayout>
         </ScrollView>
     </HorizontalScrollView>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/btnSendMail"
-            style="@android:style/Widget.ActionButton.Overflow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:text="Send e-mail to helpdesk"
-            android:layout_below="@+id/loginButton"
-            android:layout_gravity="bottom"/>
-
-        <Button
-            android:id="@+id/btnCallHelpdesk"
-            style="@android:style/Widget.ActionButton.Overflow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:text="Call helpdesk"
-            android:layout_toRightOf="@+id/btnSendMail"
-            android:layout_alignBaseline="@+id/btnSendMail"
-            android:layout_gravity="bottom"/>
-    </LinearLayout>
 
 </LinearLayout>

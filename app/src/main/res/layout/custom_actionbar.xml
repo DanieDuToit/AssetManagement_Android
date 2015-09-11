@@ -4,23 +4,21 @@
                 android:layout_height="50dp">
 
     <TextView
+        style="@style/H2"
         android:id="@+id/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
-        style='style="@style/H1" '
-        android:text="Title"
         android:layout_marginTop="3dp"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginStart="10dp"/>
 
     <TextView
         style="@style/input_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/title_time"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="2dp"/>
 
 </LinearLayout>
